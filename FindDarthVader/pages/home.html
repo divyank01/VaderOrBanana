@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+
+    <title>Vader or Banana</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="http://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="http://v4-alpha.getbootstrap.com/examples/justified-nav/justified-nav.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="masthead">
+        <h3 class="text-muted">machine learning</h3>
+
+        <nav class="navbar navbar-light bg-faded rounded mb-3">
+          
+        </nav>
+      </div>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Vader or Banana</h1>
+        <p class="lead">Upload a 80x80 image of either a banana or darth vader and find out which one it is ;)</p>
+        <p>
+        <form action="/vader/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!--<p>{{ form.non_field_errors }}</p>
+        <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>-->
+        <p>
+          {{ form.docfile.errors }}
+          {{ form.docfile }}
+        </p>
+        <p><input class="btn btn-lg btn-success" type="submit" value="Upload" /></p>
+        <!--<a class="btn btn-lg btn-success" href="#" role="button">Upload</a>-->
+      </form></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-10">
+          <h4>Result:</h4>
+          <p>The uploaded image is identified as <i><b>{{ predict }} </b></i></p>
+          <!--<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>-->
+        </div>
+        <div class="col-lg-2">
+          <img alt="Embedded Image" src="data:image/jpg;base64,{{ image }}" />
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; divyank sharma</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
