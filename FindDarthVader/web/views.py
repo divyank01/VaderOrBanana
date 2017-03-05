@@ -33,7 +33,7 @@ def SignIn(request):
             newdoc = Upload(data = request.FILES['docfile'])
             img=base64.b64encode(newdoc.data.read())
             try:
-                answer=get_prediction(imread(newdoc.data).flatten())
+                answer=get_prediction(scipy.misc.imresize(imread(newdoc.data),(80,80)).flatten())
             except Exception:
             	return render_to_response(
                 'error.html',

@@ -30,7 +30,7 @@
       <!-- Jumbotron -->
       <div class="jumbotron">
         <h1>Vader or Banana</h1>
-        <p class="lead">Upload a 80x80 image of either a banana or darth vader and find out which one it is ;)</p>
+        <p class="lead">Upload a image of either a banana or darth vader and find out which one it is ;)</p>
         <p>
         <form action="/vader/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -53,7 +53,7 @@
           <!--<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>-->
         </div>
         <div class="col-lg-2">
-          <img alt="Embedded Image" src="data:image/jpg;base64,{{ image }}" />
+          <img alt="Embedded Image" src="data:image/jpg;base64,{{ image }}" height=80/>
         </div>
       </div>
 
